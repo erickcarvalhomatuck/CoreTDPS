@@ -1,0 +1,1042 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TCM - Tropospheric Molecular Condenser | Atmospheric Water Harvesting</title>
+    <meta name="description" content="Innovative solution to combat drought and restore ecosystems through tropospheric water harvesting">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        :root {
+            --primary: #1a3a4f;
+            --secondary: #4a8fe7;
+            --accent: #28a793;
+            --light: #f8f9fa;
+            --dark: #0e1e2b;
+            --text: #2d3748;
+            --text-light: #718096;
+            --white: #ffffff;
+            --overlay: rgba(26, 58, 79, 0.85);
+            --transition: all 0.4s cubic-bezier(0.645, 0.045, 0.355, 1);
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            color: var(--text);
+            line-height: 1.7;
+            background-color: var(--light);
+            font-family: 'Montserrat', sans-serif;
+            overflow-x: hidden;
+            font-weight: 400;
+        }
+        
+        h1, h2, h3, h4 {
+            font-family: 'Playfair Display', serif;
+            font-weight: 700;
+            line-height: 1.3;
+        }
+        
+        /* Header Styles */
+        header {
+            background: linear-gradient(var(--overlay), var(--overlay)), 
+                        url('https://images.unsplash.com/photo-1561484930-974554019ade?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80') no-repeat center center;
+            background-size: cover;
+            color: var(--white);
+            padding: 2rem 0;
+            position: relative;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+        }
+        
+        .water-wave {
+            position: absolute;
+            bottom: -1px;
+            left: 0;
+            width: 100%;
+            height: 150px;
+            background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none"><path d="M0,0V46.29c47.79,22.2,103.59,32.17,158,28,70.36-5.37,136.33-33.31,206.8-37.5C438.64,32.43,512.34,53.67,583,72.05c69.27,18,138.3,24.88,209.4,13.08,36.15-6,69.85-17.84,104.45-29.34C989.49,25,1113-14.29,1200,52.47V0Z" opacity=".25" fill="%23f8f9fa"></path><path d="M0,0V15.81C13,36.92,27.64,56.86,47.69,72.05,99.41,111.27,165,111,224.58,91.58c31.15-10.15,60.09-26.07,89.67-39.8,40.92-19,84.73-46,130.83-49.67,36.26-2.85,70.9,9.42,98.6,31.56,31.77,25.39,62.32,62,103.63,73,40.44,10.79,81.35-6.69,119.13-24.28s75.16-39,116.92-43.05c59.73-5.85,113.28,22.88,168.9,38.84,30.2,8.66,59,6.17,87.09-7.5,22.43-10.89,48-26.93,60.65-49.24V0Z" opacity=".5" fill="%23f8f9fa"></path><path d="M0,0V5.63C149.93,59,314.09,71.32,475.83,42.57c43-7.64,84.23-20.12,127.61-26.46,59-8.63,112.48,12.24,165.56,35.4C827.93,77.22,886,95.24,951.2,90c86.53-7,172.46-45.71,248.8-84.81V0Z" fill="%23f8f9fa"></path></svg>');
+            background-size: cover;
+            z-index: 10;
+        }
+        
+        .header-content {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 5%;
+            position: relative;
+            z-index: 2;
+            width: 100%;
+        }
+        
+        /* Navigation */
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 3rem;
+            padding: 1rem 0;
+        }
+        
+        .logo {
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--white);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+        }
+        
+        .logo i {
+            margin-right: 0.8rem;
+            color: var(--accent);
+        }
+        
+        .nav-links {
+            display: flex;
+            list-style: none;
+        }
+        
+        .nav-links li {
+            margin-left: 2.5rem;
+        }
+        
+        .nav-links a {
+            color: var(--white);
+            text-decoration: none;
+            font-weight: 500;
+            transition: var(--transition);
+            position: relative;
+            font-size: 1.1rem;
+            letter-spacing: 0.5px;
+        }
+        
+        .nav-links a:after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            background: var(--accent);
+            bottom: -5px;
+            left: 0;
+            transition: var(--transition);
+        }
+        
+        .nav-links a:hover {
+            color: var(--accent);
+        }
+        
+        .nav-links a:hover:after {
+            width: 100%;
+        }
+        
+        /* Hero Section */
+        .hero {
+            text-align: center;
+            padding: 4rem 0 8rem;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        
+        .hero h1 {
+            font-size: 3.8rem;
+            margin-bottom: 2rem;
+            font-weight: 700;
+            text-shadow: 0 2px 10px rgba(0,0,0,0.3);
+            line-height: 1.2;
+        }
+        
+        .hero p {
+            font-size: 1.3rem;
+            margin: 0 auto 3rem;
+            text-shadow: 0 1px 3px rgba(0,0,0,0.2);
+            opacity: 0.9;
+        }
+        
+        .btn-container {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            flex-wrap: wrap;
+        }
+        
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            background-color: var(--accent);
+            color: var(--white);
+            padding: 1rem 2.2rem;
+            border-radius: 4px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: var(--transition);
+            border: none;
+            cursor: pointer;
+            box-shadow: 0 4px 15px rgba(40, 167, 147, 0.3);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-size: 0.9rem;
+        }
+        
+        .btn:hover {
+            background-color: #1e8c7a;
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(40, 167, 147, 0.4);
+        }
+        
+        .btn i {
+            margin-right: 0.6rem;
+        }
+        
+        .btn-outline {
+            background-color: transparent;
+            border: 2px solid var(--white);
+            box-shadow: none;
+        }
+        
+        .btn-outline:hover {
+            background-color: var(--white);
+            color: var(--primary);
+            border-color: var(--white);
+        }
+        
+        /* Main Sections */
+        section {
+            padding: 6rem 0;
+            position: relative;
+        }
+        
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 5%;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 1.5rem;
+            font-size: 2.8rem;
+            color: var(--primary);
+            position: relative;
+        }
+        
+        .section-title:after {
+            content: '';
+            display: block;
+            width: 80px;
+            height: 4px;
+            background: linear-gradient(to right, var(--accent), var(--secondary));
+            margin: 1.5rem auto 0;
+            border-radius: 2px;
+        }
+        
+        .section-subtitle {
+            text-align: center;
+            margin-bottom: 4rem;
+            color: var(--text-light);
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+            font-size: 1.2rem;
+        }
+        
+        /* Features Section */
+        .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 3rem;
+            margin-top: 4rem;
+        }
+        
+        .feature-card {
+            background-color: var(--white);
+            border-radius: 10px;
+            padding: 2.5rem;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+            transition: var(--transition);
+            border-top: 4px solid var(--accent);
+            text-align: center;
+        }
+        
+        .feature-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
+        }
+        
+        .feature-icon {
+            font-size: 3rem;
+            color: var(--accent);
+            margin-bottom: 1.5rem;
+            display: inline-block;
+        }
+        
+        .feature-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1.5rem;
+            color: var(--primary);
+        }
+        
+        .feature-card p {
+            color: var(--text-light);
+        }
+        
+        /* Technology Section */
+        .tech-specs {
+            background-color: var(--white);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .tech-specs:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('https://images.unsplash.com/photo-1451187580459-43490279c0fa?ixlib=rb-1.2.1&auto=format&fit=crop&w=1352&q=80') no-repeat center center;
+            background-size: cover;
+            opacity: 0.03;
+            z-index: 0;
+        }
+        
+        .spec-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 3rem;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .spec-item {
+            background-color: var(--white);
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+            transition: var(--transition);
+            border-left: 4px solid var(--secondary);
+            border-top: 1px solid rgba(0,0,0,0.05);
+        }
+        
+        .spec-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+        
+        .spec-item h3 {
+            color: var(--secondary);
+            margin-bottom: 1.5rem;
+            font-size: 1.4rem;
+            display: flex;
+            align-items: center;
+        }
+        
+        .spec-item h3 i {
+            margin-right: 0.8rem;
+            color: var(--accent);
+        }
+        
+        .spec-item ul {
+            list-style: none;
+        }
+        
+        .spec-item li {
+            margin-bottom: 1rem;
+            position: relative;
+            padding-left: 2rem;
+            color: var(--text-light);
+        }
+        
+        .spec-item li:before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0.7rem;
+            width: 8px;
+            height: 8px;
+            background: var(--accent);
+            border-radius: 50%;
+        }
+        
+        /* Diagram Section */
+        .diagram-container {
+            margin: 5rem auto;
+            max-width: 900px;
+            text-align: center;
+            position: relative;
+        }
+        
+        .diagram {
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
+            border: 1px solid rgba(0,0,0,0.05);
+            transition: var(--transition);
+        }
+        
+        .diagram:hover {
+            transform: scale(1.02);
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.15);
+        }
+        
+        .diagram-container p {
+            margin-top: 1.5rem;
+            font-style: italic;
+            color: var(--text-light);
+        }
+        
+        /* Impact Section */
+        .impact-stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 2rem;
+            margin-top: 4rem;
+        }
+        
+        .stat-item {
+            padding: 2.5rem 1.5rem;
+            background: var(--white);
+            border-radius: 10px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+            text-align: center;
+            transition: var(--transition);
+        }
+        
+        .stat-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.1);
+        }
+        
+        .stat-number {
+            font-size: 3.5rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            background: linear-gradient(to right, var(--accent), var(--secondary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            font-family: 'Montserrat', sans-serif;
+        }
+        
+        .stat-label {
+            font-size: 1.1rem;
+            color: var(--text-light);
+        }
+        
+        /* CTA Section */
+        .cta {
+            background: linear-gradient(135deg, var(--secondary), var(--primary)), 
+                        url('https://images.unsplash.com/photo-1509316785289-025f5b846b35?ixlib=rb-1.2.1&auto=format&fit=crop&w=1352&q=80') no-repeat center center;
+            background-size: cover;
+            color: var(--white);
+            text-align: center;
+            padding: 6rem 0;
+            position: relative;
+        }
+        
+        .cta:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(14, 30, 43, 0.8);
+            z-index: 0;
+        }
+        
+        .cta .container {
+            position: relative;
+            z-index: 1;
+        }
+        
+        .cta h2 {
+            font-size: 2.8rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .cta p {
+            max-width: 700px;
+            margin: 0 auto 3rem;
+            font-size: 1.3rem;
+            opacity: 0.9;
+        }
+        
+        /* Contact Section */
+        .contact-form {
+            max-width: 700px;
+            margin: 0 auto;
+            background: var(--white);
+            padding: 3rem;
+            border-radius: 10px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+        }
+        
+        .form-group {
+            margin-bottom: 2rem;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 0.8rem;
+            font-weight: 500;
+            color: var(--primary);
+        }
+        
+        .form-control {
+            width: 100%;
+            padding: 1rem;
+            border: 1px solid #e2e8f0;
+            border-radius: 4px;
+            font-family: 'Montserrat', sans-serif;
+            transition: var(--transition);
+        }
+        
+        .form-control:focus {
+            outline: none;
+            border-color: var(--accent);
+            box-shadow: 0 0 0 3px rgba(40, 167, 147, 0.2);
+        }
+        
+        textarea.form-control {
+            min-height: 150px;
+            resize: vertical;
+        }
+        
+        /* Footer */
+        footer {
+            background-color: var(--dark);
+            color: var(--white);
+            padding: 5rem 0 2rem;
+            position: relative;
+        }
+        
+        footer:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 10px;
+            background: linear-gradient(to right, var(--accent), var(--secondary));
+        }
+        
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 3rem;
+            margin-bottom: 3rem;
+        }
+        
+        .footer-column h3 {
+            font-size: 1.4rem;
+            margin-bottom: 1.5rem;
+            color: var(--accent);
+            position: relative;
+            padding-bottom: 1rem;
+        }
+        
+        .footer-column h3:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 50px;
+            height: 2px;
+            background: var(--accent);
+        }
+        
+        .footer-column p {
+            margin-bottom: 1.5rem;
+            opacity: 0.8;
+            line-height: 1.8;
+        }
+        
+        .footer-column ul {
+            list-style: none;
+        }
+        
+        .footer-column li {
+            margin-bottom: 1rem;
+        }
+        
+        .footer-column a {
+            color: var(--white);
+            text-decoration: none;
+            transition: var(--transition);
+            opacity: 0.8;
+            display: flex;
+            align-items: center;
+        }
+        
+        .footer-column a:hover {
+            color: var(--accent);
+            opacity: 1;
+            transform: translateX(5px);
+        }
+        
+        .footer-column a i {
+            margin-right: 0.8rem;
+            width: 20px;
+            text-align: center;
+        }
+        
+        .social-links {
+            display: flex;
+            gap: 1.5rem;
+            margin-top: 1.5rem;
+        }
+        
+        .social-links a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background: rgba(255,255,255,0.1);
+            border-radius: 50%;
+            transition: var(--transition);
+        }
+        
+        .social-links a:hover {
+            background: var(--accent);
+            transform: translateY(-3px);
+        }
+        
+        .copyright {
+            text-align: center;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: var(--white);
+            opacity: 0.7;
+            font-size: 0.9rem;
+        }
+        
+        /* Responsive adjustments */
+        @media (max-width: 992px) {
+            .hero h1 {
+                font-size: 3.2rem;
+            }
+            
+            .section-title {
+                font-size: 2.5rem;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            header {
+                min-height: auto;
+                padding: 4rem 0;
+            }
+            
+            .hero {
+                padding: 2rem 0 4rem;
+            }
+            
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .nav-links {
+                display: none;
+            }
+            
+            .section-title {
+                font-size: 2.2rem;
+            }
+            
+            .btn-container {
+                flex-direction: column;
+                gap: 1rem;
+            }
+            
+            .btn-outline {
+                margin-left: 0;
+            }
+            
+            section {
+                padding: 4rem 0;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+            
+            .hero p {
+                font-size: 1.1rem;
+            }
+            
+            .section-title {
+                font-size: 1.8rem;
+            }
+            
+            .section-subtitle {
+                font-size: 1rem;
+            }
+            
+            .feature-card {
+                padding: 1.5rem;
+            }
+            
+            .contact-form {
+                padding: 2rem;
+            }
+        }
+        
+        /* Animation classes */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+        }
+        
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        /* Floating animation for water drop */
+        .water-drop {
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            background: rgba(255,255,255,0.3);
+            border-radius: 50%;
+            animation: float 6s infinite ease-in-out;
+            z-index: 1;
+        }
+        
+        @keyframes float {
+            0%, 100% {
+                transform: translateY(0) translateX(0);
+            }
+            50% {
+                transform: translateY(-20px) translateX(10px);
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="water-wave"></div>
+        <!-- Floating water drops -->
+        <div class="water-drop" style="top: 20%; left: 10%; width: 15px; height: 15px; animation-delay: 0s;"></div>
+        <div class="water-drop" style="top: 70%; left: 80%; width: 12px; height: 12px; animation-delay: 1s;"></div>
+        <div class="water-drop" style="top: 40%; left: 50%; width: 18px; height: 18px; animation-delay: 2s;"></div>
+        
+        <div class="header-content">
+            <nav>
+                <a href="#" class="logo">
+                    <i class="fas fa-cloud-rain"></i> TCM
+                </a>
+                <ul class="nav-links">
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#technology">Technology</a></li>
+                    <li><a href="#impact">Impact</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+            <div class="hero">
+                <h1>Tropospheric Molecular Condenser</h1>
+                <p>An innovative climate solution for atmospheric water harvesting and ecosystem restoration in drought-affected regions.</p>
+                <div class="btn-container">
+                    <a href="#technology" class="btn">
+                        <i class="fas fa-flask"></i> Our Technology
+                    </a>
+                    <a href="#contact" class="btn btn-outline">
+                        <i class="fas fa-handshake"></i> Partner With Us
+                    </a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <section id="about">
+        <div class="container">
+            <h2 class="section-title">Sustainable Water Security</h2>
+            <p class="section-subtitle">The TCM system represents a breakthrough in atmospheric water harvesting technology, offering a scalable solution to water scarcity while promoting environmental regeneration.</p>
+            
+            <div class="features">
+                <div class="feature-card fade-in">
+                    <div class="feature-icon"><i class="fas fa-tint"></i></div>
+                    <h3>Atmospheric Water Harvesting</h3>
+                    <p>Our patented technology captures water molecules directly from the troposphere, creating a renewable water source independent of traditional ground resources.</p>
+                </div>
+                <div class="feature-card fade-in">
+                    <div class="feature-icon"><i class="fas fa-leaf"></i></div>
+                    <h3>Ecosystem Restoration</h3>
+                    <p>By reintroducing water to arid regions, we enable the return of microbial life, fungi, and vegetation, initiating natural succession processes.</p>
+                </div>
+                <div class="feature-card fade-in">
+                    <div class="feature-icon"><i class="fas fa-globe-americas"></i></div>
+                    <h3>Climate Adaptation</h3>
+                    <p>The TCM system enhances regional climate resilience by creating sustainable water sources that support communities and agriculture.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="technology" class="tech-specs">
+        <div class="container">
+            <h2 class="section-title">Advanced Technology</h2>
+            <p class="section-subtitle">The TCM system combines cutting-edge materials science with atmospheric physics to create an efficient water harvesting solution.</p>
+            
+            <div class="spec-grid">
+                <div class="spec-item fade-in">
+                    <h3><i class="fas fa-cubes"></i> Structural Design</h3>
+                    <ul>
+                        <li>4 primary helium casings for buoyancy control</li>
+                        <li>4 secondary water storage compartments</li>
+                        <li>Advanced polyester mesh collection surface</li>
+                        <li>Graphite thermal regulation plates</li>
+                        <li>Centralized monitoring system</li>
+                    </ul>
+                </div>
+                <div class="spec-item fade-in">
+                    <h3><i class="fas fa-atom"></i> Material Science</h3>
+                    <ul>
+                        <li>Helium casings: Polyester/polyurethane composite</li>
+                        <li>Water reservoirs: Reinforced polyester canvas</li>
+                        <li>Surface mesh: High-efficiency polymer blends</li>
+                        <li>Structural supports: Lightweight alloy framework</li>
+                    </ul>
+                </div>
+                <div class="spec-item fade-in">
+                    <h3><i class="fas fa-bolt"></i> Energy System</h3>
+                    <ul>
+                        <li>Flexible photovoltaic solar panels</li>
+                        <li>High-capacity lithium battery array</li>
+                        <li>Energy recovery pumps and actuators</li>
+                        <li>Thermal regulation system</li>
+                    </ul>
+                </div>
+                <div class="spec-item fade-in">
+                    <h3><i class="fas fa-cogs"></i> Operational Protocol</h3>
+                    <ul>
+                        <li>Nocturnal operation in hot climates</li>
+                        <li>Precision water release mechanisms</li>
+                        <li>Remote monitoring and control</li>
+                        <li>Climate-adaptive operation modes</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="diagram-container fade-in">
+                <img src="https://i.ibb.co/NdHFmsqr/Chat-GPT-Image-29-de-abr-de-2025-09-01-07.png" 
+                     alt="TCM System Diagram" 
+                     class="diagram">
+                <p>Engineering schematic of the Tropospheric Molecular Condenser system</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="impact">
+        <div class="container">
+            <h2 class="section-title">Global Impact Potential</h2>
+            <p class="section-subtitle">The TCM system addresses critical UN Sustainable Development Goals related to water security and ecosystem preservation.</p>
+            
+            <div class="impact-stats">
+                <div class="stat-item fade-in">
+                    <div class="stat-number">2.3B</div>
+                    <div class="stat-label">People in water-stressed regions</div>
+                </div>
+                <div class="stat-item fade-in">
+                    <div class="stat-number">40%</div>
+                    <div class="stat-label">Global arid/semi-arid land area</div>
+                </div>
+                <div class="stat-item fade-in">
+                    <div class="stat-number">100%</div>
+                    <div class="stat-label">Renewable atmospheric source</div>
+                </div>
+                <div class="stat-item fade-in">
+                    <div class="stat-number">5Y</div>
+                    <div class="stat-label">To measurable ecosystem recovery</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="cta">
+        <div class="container">
+            <h2>Join the Water Revolution</h2>
+            <p>The TCM project offers governments and organizations a scalable solution to water scarcity and climate adaptation challenges.</p>
+            <a href="#contact" class="btn">
+                <i class="fas fa-envelope"></i> Contact Our Team
+            </a>
+        </div>
+    </section>
+
+    <section id="contact">
+        <div class="container">
+            <h2 class="section-title">Collaborate With Us</h2>
+            <p class="section-subtitle">We're establishing partnerships with governments, NGOs, and research institutions for global deployment.</p>
+            
+            <form class="contact-form fade-in">
+                <div class="form-group">
+                    <label for="name">Name</label>
+                    <input type="text" id="name" class="form-control" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" class="form-control" required>
+                </div>
+                <div class="form-group">
+                    <label for="organization">Organization</label>
+                    <input type="text" id="organization" class="form-control" required>
+                </div>
+                <div class="form-group">
+                    <label for="message">How can we collaborate?</label>
+                    <textarea id="message" class="form-control" required></textarea>
+                </div>
+                <button type="submit" class="btn" style="width: 100%;">
+                    <i class="fas fa-paper-plane"></i> Send Message
+                </button>
+            </form>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>TCM Project</h3>
+                    <p>Developing innovative climate solutions through atmospheric water harvesting technology for a sustainable future.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                        <a href="#"><i class="fab fa-researchgate"></i></a>
+                    </div>
+                </div>
+                <div class="footer-column">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="#about"><i class="fas fa-chevron-right"></i> About Project</a></li>
+                        <li><a href="#technology"><i class="fas fa-chevron-right"></i> Technology</a></li>
+                        <li><a href="#impact"><i class="fas fa-chevron-right"></i> Global Impact</a></li>
+                        <li><a href="#contact"><i class="fas fa-chevron-right"></i> Partnerships</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Resources</h3>
+                    <ul>
+                        <li><a href="#"><i class="fas fa-chevron-right"></i> Technical White Paper</a></li>
+                        <li><a href="#"><i class="fas fa-chevron-right"></i> Research Publications</a></li>
+                        <li><a href="#"><i class="fas fa-chevron-right"></i> Deployment Case Studies</a></li>
+                        <li><a href="#"><i class="fas fa-chevron-right"></i> Media Kit</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Contact</h3>
+                    <ul>
+                        <li><a href="mailto:contact@tcmproject.org"><i class="fas fa-envelope"></i> contact@tcmproject.org</a></li>
+                        <li><a href="tel:+1234567890"><i class="fas fa-phone"></i> +1 (234) 567-890</a></li>
+                        <li><a href="#"><i class="fas fa-map-marker-alt"></i> Sustainability Innovation Center</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2023 Tropospheric Molecular Condenser Project. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Scroll animation
+        document.addEventListener('DOMContentLoaded', () => {
+            const fadeElements = document.querySelectorAll('.fade-in');
+            
+            const fadeInOnScroll = () => {
+                fadeElements.forEach(element => {
+                    const elementTop = element.getBoundingClientRect().top;
+                    const windowHeight = window.innerHeight;
+                    
+                    if (elementTop < windowHeight - 100) {
+                        element.classList.add('visible');
+                    }
+                });
+            };
+            
+            // Initial check
+            fadeInOnScroll();
+            
+            // Check on scroll with throttle
+            let isScrolling;
+            window.addEventListener('scroll', () => {
+                window.clearTimeout(isScrolling);
+                isScrolling = setTimeout(fadeInOnScroll, 50);
+            }, false);
+            
+            // Smooth scrolling for anchor links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    
+                    const targetId = this.getAttribute('href');
+                    if (targetId === '#') return;
+                    
+                    const targetElement = document.querySelector(targetId);
+                    if (targetElement) {
+                        window.scrollTo({
+                            top: targetElement.offsetTop - 80,
+                            behavior: 'smooth'
+                        });
+                        
+                        // Update URL without jumping
+                        if (history.pushState) {
+                            history.pushState(null, null, targetId);
+                        } else {
+                            location.hash = targetId;
+                        }
+                    }
+                });
+            });
+            
+            // Form submission
+            const contactForm = document.querySelector('.contact-form');
+            if (contactForm) {
+                contactForm.addEventListener('submit', (e) => {
+                    e.preventDefault();
+                    
+                    // Simple validation
+                    const name = document.getElementById('name').value.trim();
+                    const email = document.getElementById('email').value.trim();
+                    const message = document.getElementById('message').value.trim();
+                    
+                    if (name && email && message) {
+                        // In a real implementation, you would send this to a server
+                        alert('Thank you for your interest in the TCM project. Our team will contact you shortly.');
+                        contactForm.reset();
+                    } else {
+                        alert('Please fill in all required fields.');
+                    }
+                });
+            }
+            
+            // Add water drops dynamically
+            const header = document.querySelector('header');
+            for (let i = 0; i < 5; i++) {
+                const drop = document.createElement('div');
+                drop.className = 'water-drop';
+                drop.style.top = `${Math.random() * 80 + 10}%`;
+                drop.style.left = `${Math.random() * 80 + 10}%`;
+                drop.style.width = `${Math.random() * 10 + 10}px`;
+                drop.style.height = drop.style.width;
+                drop.style.animationDelay = `${Math.random() * 5}s`;
+                header.appendChild(drop);
+            }
+        });
+    </script>
+</body>
+</html>
